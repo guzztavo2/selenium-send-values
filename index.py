@@ -28,7 +28,6 @@ def send_keys_to_element(driver, select, value, by):
             driver.execute_script(f"arguments[0].value = '{value}';", select_element(driver, select, by))
         except:
             raise exceptions.NoSuchElementException(f"Elemento não encontrado {select} - {by}")
-    driver.execute_script(f"arguments[0].blur();", element)
     return True
 
 def initScreen():
